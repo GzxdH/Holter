@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000" >
+
+    <SurfaceView
+        android:id="@+id/sfv_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <SurfaceView
+        android:id="@+id/show"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000" />
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V1"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V2"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V3"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V4"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V5"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="V6"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="II"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="III"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aVR"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aVL"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/label12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="aVF"
+        android:textColor="#7777FF"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/show_hr_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+		
+        <ImageView
+            android:id="@+id/hr_im"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/hr_im" />
+        <TextView
+            android:id="@+id/hr_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_gravity="center_vertical"
+            android:text="60"
+            android:textSize="20sp"
+            android:textColor="#00FF00"/>
+
+        
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/showNowTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="时间"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/showUserNameAndNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="用户"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+</RelativeLayout>
