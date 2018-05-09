@@ -65,20 +65,11 @@ public class LocalDataActivity extends AppCompatActivity {
                 for (int j = 0; j < datas_str.length; j++) {
                     datas_double[j] = Double.valueOf(datas_str[j]);
                 }
-                //发送handler-
-//                final Message msg = new Message();
-//                Bundle data1 = new Bundle();
-//                data1.putDoubleArray("doubles12_all", datas_double);
-//                data1.putInt("screen_width", screen_width);
-//                data1.putInt("screen_height", screen_height);
-//                msg.what = 1;
-//                msg.setData(data1);
-//                ShowActivity.handler.sendMessage(msg);
-
                 Intent intent = new Intent(LocalDataActivity.this, ShowActivity.class);
                 intent.putExtra("datas_double", datas_double);
                 intent.putExtra("screen_width", screen_width);
                 intent.putExtra("screen_height", screen_height);
+                intent.putExtra("isLocal", true);
                 startActivity(intent);
             }
         });

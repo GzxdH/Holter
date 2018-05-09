@@ -37,8 +37,10 @@ public class MyApp extends Application {
     }
 
     public static void closeThread() {
-        clientThread.end();
-        clientThread.interrupt();
+        if (clientThread != null) {
+            clientThread.end();
+            clientThread.interrupt();
+        }
     }
 
 }

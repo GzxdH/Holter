@@ -89,6 +89,7 @@ public class ShowActivity extends AppCompatActivity {
     private static String data_date;
     private static String data_string;
     private double[] datas_double;
+    private boolean isLocal;
 
     @SuppressWarnings("deprecation")
     @Override
@@ -105,6 +106,7 @@ public class ShowActivity extends AppCompatActivity {
         }
 
         datas_double = getIntent().getDoubleArrayExtra("datas_double");
+        isLocal = getIntent().getBooleanExtra("isLocal", false);
         if (datas_double.length != 0) {
             int l_w = getIntent().getIntExtra("screen_width", 0);
             int l_h = getIntent().getIntExtra("screen_height", 0);
@@ -117,7 +119,7 @@ public class ShowActivity extends AppCompatActivity {
             data1.putDoubleArray("doubles12_all", datas_double);
             msg.what = 1;
             msg.setData(data1);
-            handler.sendMessage(msg);
+            handler.sendMessageDelayed(msg, 1000);
         }
 
         timerThread = new TimerThread();
@@ -156,8 +158,8 @@ public class ShowActivity extends AppCompatActivity {
                     / (2 * channel_count + 4);
         }
 
-        sfv_bottom = this.findViewById(R.id.sfv_bottom);
-        show = this.findViewById(R.id.show);
+        sfv_bottom = findViewById(R.id.sfv_bottom);
+        show = findViewById(R.id.show);
         show.setClickable(false);
         show.setZOrderOnTop(true);
 
@@ -263,7 +265,6 @@ public class ShowActivity extends AppCompatActivity {
                 case 1:
                     Bundle b = msg.getData();
                     int_arr = b.getDoubleArray("doubles12_all");
-                    Log.i(TAG, "" + the_width + ";" + the_height + ";" + int_arr.length);
                     data_string = datatoString(int_arr);
                     drawEEGWave(e_startX, int_arr);
                     break;
@@ -339,15 +340,15 @@ public class ShowActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
-//        if (datas_double.length == 0) {
-        if (data_date != null && !data_date.equals("")) {
-            FileUtil.setFileName(data_date);
+        if (!isLocal) {
+            if (data_date != null && !data_date.equals("")) {
+                FileUtil.setFileName(data_date);
+            }
+            if (data_string != null && !data_string.equals("")) {
+                Log.i(TAG, data_string.length() + "");
+                FileUtil.writeData(data_string);
+            }
         }
-        if (data_string != null && !data_string.equals("")) {
-            Log.i(TAG, data_string.length() + "");
-            FileUtil.writeData(data_string);
-        }
-//        }
 
         timerThread.interrupt();
         MyApp.closeThread();
