@@ -107,7 +107,7 @@ public class ShowActivity extends AppCompatActivity {
 
         datas_double = getIntent().getDoubleArrayExtra("datas_double");
         isLocal = getIntent().getBooleanExtra("isLocal", false);
-        if (datas_double.length != 0) {
+        if (datas_double != null) {
             int l_w = getIntent().getIntExtra("screen_width", 0);
             int l_h = getIntent().getIntExtra("screen_height", 0);
             if (l_w != 0 && l_h != 0) {
